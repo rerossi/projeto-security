@@ -1,0 +1,8 @@
+{
+    "name": "seu-nome/projeto",
+    "description": "Descrição do seu projeto",
+    "require": {
+        "php": "^8.1.2",
+        "twig/twig": "^3.0"
+    }
+}
