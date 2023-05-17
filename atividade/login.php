@@ -6,7 +6,7 @@ if (isset($_SESSION['user_id'])) {
     exit;
 }
 
-require_once('./config/config.php');
+require_once('../config/config.php');
 
 $conn = mysqli_connect($db_host, $db_user, $db_password, $db_name);
 

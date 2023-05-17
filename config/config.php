@@ -1,18 +1,14 @@
 <?php
 
-$host = "localhost";
-$port = 3306;
-$dbname = "projeto-security";
-$user = "root";
-$password = "";
+$db_host = 'localhost';
+$db_user = 'root'; 
+$db_password = ''; 
+$db_name = 'projeto-security';
 
-$dsn = "mysql:host=$host;port=$port;dbname=$dbname";
+// Conexão com o banco de dados
+$mysqli = new mysqli($db_host, $db_user, $db_password, $db_name);
 
-try {
-    $pdo = new PDO($dsn, $user, $password);
-    // configurar o PDO para lançar exceções em caso de erros
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    echo "Erro ao conectar ao banco de dados: " . $e->getMessage();
-    exit;
+// Verifica se ocorreu algum erro na conexão
+if ($mysqli->connect_errno) {
+    die('Erro ao conectar ao banco de dados: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
 }
